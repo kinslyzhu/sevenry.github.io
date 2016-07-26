@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>myblog - Authors</title>
+    <title>myblog - Articles by sevenry</title>
     <link rel="stylesheet" type="text/css" href="/theme/css/screen.min.css">
     <link rel="stylesheet" type="text/css" href="/theme/css/highlight.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
@@ -117,26 +117,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <span class="hidden">Scroll Down</span>
             </a>
         </header>
-<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-    <header>
-        <h1 class="post-title" itemprop="headline">Authors on myblog</h1>       
-    </header>
-    <section class="post-content">
-        <div itemprop="text">
-            <ul>                <li itemscope="" itemtype="http://schema.org/Person" itemprop="author">
-                    <a href="/author/sevenry.html" itemprop="url" rel="author" class="tooltip-bottom" data-tooltip="View all sevenry's post">
-                        <i class="fa fa-user"></i>
-                        <span itemprop="name">
-                            sevenry
-                        </span>
+<main id="content" class="content" role="main" itemprop="mainContentOfPage" itemscope="" itemtype="http://schema.org/Blog">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <header class="post-header" itemprop="headline">
+                <h2 class="post-title">
+                    <a href="/cat_catch_question.html" rel="bookmark">
+                        猫捉老鼠问题的代码解法
                     </a>
-                    (2)
-                </li>
-            </ul>
-        </div>
-        <hr>
-<small>Si deseas realizar una donacion via <strong>PayPal</strong> puedes hacerlo dandole un clic al cerdito...<form class="text-center" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="RKG8G3ABP4XSW"><input type="image" src="/theme/images/1412723932_money_box.svg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></form>Si deseas realizar una donacion via <strong>BTC</strong> puedes hacerlo usando<br/>esto: 1KQbQ1oWNaTeLQ671NhXS1jVd8w5yQwCmi <br/>Gracias!!</small>    </section>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7127443823639155" data-ad-slot="9038513565" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></article>
+                </h2>
+            </header>
+            <section class="post-excerpt">
+                <h3>在数轴上，0的位置停着一个不动的老鼠，1的位置在初始时刻有一只猫。猫是可以走动的，每一步在数轴上分别以二分之一的概率或朝着正方向或朝着负方向走1的距离。当猫到达0的位置时，猫就抓到老鼠了，游戏结束。问当猫走的步数趋向于无穷大的时候，最终捉到老鼠的概率是多大？</h3>
+<h2>解答：</h2>
+<h3>将所求概率记为P。</h3>
+<h3>猫第一步以1/2的概率左行捉到老鼠，对P的贡献是1/2.</h3>
+<h3>猫第一步以1/2的概率右行，到达x=2的位置。为捉到老鼠，猫首先必须左行到x=1的位置，这与问题所求的猫从x=1到x=0位置的情况相同，概率同为P。到达x=1的位置后，游戏又回到初态，猫左行至x=0处概率仍为P。因此，猫先右行至x=2，然后最终回到x=0对P的贡献为1/2<em>P</em>P。</h3>
+<h3>因此有P=1/2+1/2<em>P</em>P</h3>
+<h3>解得P=1。</h3>
+<h3>最终的结论 ...</h3>
+                <p><a class="read-more" itemprop="url" href="/cat_catch_question.html" title="Read this article" rel="bookmark">Leer m&aacute;s &raquo;</a></p>
+            </section>
+            <footer class="post-meta">
+                <span class="entry-author" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+                    <span itemprop="name">sevenry</span></span>
+                <time itemprop="datePublished" class="post-date" datetime="2016YYY-00M-%DD">星期二, 七月 26, 2016</time>
+            </footer>        
+        </article>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <header class="post-header" itemprop="headline">
+                <h2 class="post-title">
+                    <a href="/wuliu-peisong.html" rel="bookmark">
+                        关于物流配送成本最优化问题
+                    </a>
+                </h2>
+            </header>
+            <section class="post-excerpt">
+                <h3>该问题的详细表述可以参考https://github.com/sevenry/my_data/tree/master/160703 中的问题模型.pdf文件。具体求解过程可参考其中的mox.py。</h3>
+<h3>问题简述：一个总中心可以把货流分配给7个末端中心，7个末端中心和18个客户之间产生联系。末端中心集合记为I，客户集合记为J。</h3>
+<h3>已知：</h3>
+<h4>总中心与7个末端中心距离，7个末端中心和18个客户之间距离，车辆运输成本，冷藏成本，折旧费等，18个客户各自的货运需求量。</h4>
+<h3>目标：</h3>
+<h4>总成本最低，包括：上层模型总成本即总中心到末端中心之间成本；下层模型总成本即末端中心与客户之间。</h4>
+<h4>注意：并不完全是这样，这样的区分是为了后文中互相迭代求最佳的Xij和Wj的组合。</h4>
+<h3>所求量：   ####18个客户的货物存在两种提取方式：自提或者配送，可以设置Wj为0/1变量进行区别；18个中心分别由哪个末端中心配送，用Xij设置0/1变量记录。</h3>
+<h3>边界条件：</h3>
+<h4>最终选择3个末端中心进行配送，每个末端中心的配送总额有最低值和最高值；任何一个客户有且只能选择一个末端中心进行配送。</h4>
+<h3>思路：</h3>
+<h4>设定W初始量为随机值，进入上层模型，得到上层最优化的X分量，作为初始值代入下层模型，得到最优化的W分量 ...</h4>
+                <p><a class="read-more" itemprop="url" href="/wuliu-peisong.html" title="Read this article" rel="bookmark">Leer m&aacute;s &raquo;</a></p>
+            </section>
+            <footer class="post-meta">
+                <span class="entry-author" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+                    <span itemprop="name">sevenry</span></span>
+                <time itemprop="datePublished" class="post-date" datetime="2016YYY-00M-%DD">星期三, 六月 29, 2016</time>
+            </footer>        
+        </article>
+    <nav class="pagination" role="navigation">
+            <span class="page-number">Page 1 of 1</span>
+    </nav>
+</main>
         <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
             <section class="copyright">
                 <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="tooltip" data-tooltip="CC BY-NC-SA" target="_blank">
